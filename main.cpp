@@ -2,22 +2,22 @@
 #include "vector.h"
 #include "timer.h"
 using namespace std;
+
+
 int main()
 { 
-    // testing myVector class
-    
-    std::vector<int> stdVec;
-    myVector<int> myVec;
+    //testing myVector class
 
-    stdVec.emplace_back(1, 2, 3);
+    std::vector<int> stdVec {1,2,3};
+    myVector<int> myVec {1,2,3};
 
-    myVec.emplace_back(1, 2, 3);
-
-    for(int i = 0; i < stdVec.size(); i++)
+    stdVec.erase(stdVec.begin()+1);
+    myVec.erase(myVec.begin()+1);
+    for(size_t i = 0; i < stdVec.size(); i++)
     {
         std::cout << stdVec[i] << " ";
     }
-    std::cout << std::endl;
+    std::cout << "size: " << stdVec.size() << std::endl;
     myVec.print();
 
 

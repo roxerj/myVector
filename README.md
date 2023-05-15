@@ -1,11 +1,11 @@
 # testing myVector class against std::vector
 
 
-Testing some myVector functions against std::vector functions
-|**container\function**   |emplace_back(1,2,3)   |resize(2)   |1M   |10M   |100M   |
+Testing some myVector functions against std::vector functions. Testing with these elements in containers: 1, 2, 3
+|**container\function**   |emplace_back(4)   |resize(2)   |erase(_container_.begin()+1)   |10M   |100M   |
 |---|---|---|---|---|---|
-|**std::vector**   |_elements after function: 1, 2, 3_   |_size after function: 2_   |_0.002321s_   |_0.030825s_   |_0.278785s_   |
-|**myVector**   |_elements after function: 1, 2, 3_   |_size after function: 2_   |_0.00208s_   |_0.026683s_  |_0.214362s_   |
+|**std::vector**   |_elements after function: 1, 2, 3, 4_   |_size after function: 2_   |_elements after function: 1, 2, 3_   |_0.030825s_   |_0.278785s_   |
+|**myVector**   |_elements after function: 1, 2, 3, 4_   |_size after function: 2_   |_elements after function: 1, 2, 3_   |_0.026683s_  |_0.214362s_   |
 
 
 
