@@ -15,7 +15,7 @@ private:
     int size; // size of vector
     int capacity; // capacity of vector
 public:
-
+    // constructors
     myVector() : arr(new T[1]), size(0), capacity(1) {}; // default constructor
     myVector(int size) : arr(new T[size]), size(size), capacity(size) {}; // constructor with size
     myVector(std::initializer_list<T> init) : size(init.size()), capacity(init.size()) // constructor with initializer list
@@ -33,7 +33,6 @@ public:
         std::copy(first, last, arr);
     }
 
-    
     myVector(const myVector<T>& other) : myVector(other.size) // copy constructor
     {
         std::copy(other.arr, other.arr + other.size, arr);
@@ -88,7 +87,10 @@ public:
     }
     void push_back(T data) // adds element to the end of vector
     {
-        (size == capacity) ? reserve(2 * capacity) : void();
+        if(size == capacity)
+        {
+            reserve(2 * capacity);
+        }
         arr[size] = data;
         size++;
     }
