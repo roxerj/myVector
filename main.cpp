@@ -11,13 +11,13 @@ int main()
     std::vector<int> stdVec {1,2,3};
     myVector<int> myVec {1,2,3};
 
-    stdVec.erase(stdVec.begin()+1);
-    myVec.erase(myVec.begin()+1);
+    stdVec.erase(stdVec.begin() + 1);
+    myVec.erase(myVec.begin() + 1);
     for(size_t i = 0; i < stdVec.size(); i++)
     {
         std::cout << stdVec[i] << " ";
     }
-    std::cout << "size: " << stdVec.size() << std::endl;
+    std::cout << "size: " << stdVec.size() << ", Capacity: " << stdVec.capacity() << std::endl;
     myVec.print();
 
 

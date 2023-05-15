@@ -11,9 +11,9 @@ template <class T, class... Args>
 class myVector //Full vector implementation, except for operator invalidation
 {
 private:
-    T* arr;
-    int size;
-    int capacity;
+    T* arr; // pointer to array
+    int size; // size of vector
+    int capacity; // capacity of vector
 public:
 
     myVector() : arr(new T[1]), size(0), capacity(1) {}; // default constructor
@@ -38,7 +38,7 @@ public:
     {
         std::copy(other.arr, other.arr + other.size, arr);
     }
-    ~myVector()
+    ~myVector() // destructor
     {
         // for (int i = 0; i < size; i++) 
         // {
@@ -60,8 +60,7 @@ public:
     }
     void print() // prints vector size, capacity and elements
     {
-        std::cout << "Size: " << size << std::endl;
-        std::cout << "Capacity: " << capacity << std::endl;
+        std::cout << "Size: " << size << ", Capacity: " << capacity << ", Elements: ";
         for (int i = 0; i < size; i++)
         {
             std::cout << arr[i] << " ";
@@ -87,7 +86,7 @@ public:
         }
         size = newSize;
     }
-    void push_back(T data)
+    void push_back(T data) // adds element to the end of vector
     {
         (size == capacity) ? reserve(2 * capacity) : void();
         arr[size] = data;
@@ -232,7 +231,7 @@ public:
     }
 
     // getters
-    int getSize()
+    int getSize() 
     {
         return size;
     }
